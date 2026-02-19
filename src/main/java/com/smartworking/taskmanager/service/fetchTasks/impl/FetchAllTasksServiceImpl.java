@@ -22,6 +22,7 @@ public class FetchAllTasksServiceImpl implements FetchAllTasksService {
 
         List<Task> taskList = tasks.stream()
                 .map(task -> Task.builder()
+                        .id(task.getId())
                         .title(task.getTitle())
                         .isCompleted(task.isCompleted())
                         .dueDate(task.getDueDate())

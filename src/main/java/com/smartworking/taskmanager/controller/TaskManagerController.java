@@ -8,6 +8,7 @@ import com.smartworking.taskmanager.service.addTask.AddTasksService;
 import com.smartworking.taskmanager.service.deleteTask.DeleteTaskService;
 import com.smartworking.taskmanager.service.fetchTasks.FetchAllTasksService;
 import com.smartworking.taskmanager.service.taskDetails.TaskDetailService;
+import com.smartworking.taskmanager.service.updateTask.UpdateTaskService;
 import com.smartworking.taskmanager.service.updateTask.UpdateTaskStatusService;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
@@ -23,6 +24,7 @@ public class TaskManagerController {
     private FetchAllTasksService fetchAllTasksService;
     private AddTasksService addTasksService;
     private TaskDetailService taskDetailService;
+    private UpdateTaskService updateTaskService;
     private DeleteTaskService deleteTaskService;
     private UpdateTaskStatusService updateTaskStatusService;
 
@@ -47,6 +49,14 @@ public class TaskManagerController {
     @PostMapping("/task-details")
     public Task taskDetails(@RequestParam  int id){
         return taskDetailService.getTaskDetail(id);
+    }
+
+    @PostMapping("/update-task")
+    public Task updateTask(
+            @Valid @RequestBody
+            Task request
+    ){
+        return updateTaskService.updateTaskById(request);
     }
 
     @DeleteMapping("/delete-task")
