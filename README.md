@@ -15,7 +15,8 @@ This backend powers a Task Management application that allows users to:
 * Toggle completion status
 * Delete tasks
 
-The application follows a layered architecture with **Controller → Service → Repository** separation for clean and maintainable code.
+The application follows a layered architecture with **Controller → Service → Repository** separation for clean and
+maintainable code.
 
 ---
 
@@ -68,7 +69,6 @@ Update `src/main/resources/application.properties`:
 spring.datasource.url=jdbc:mysql://localhost:3306/task
 spring.datasource.username=root
 spring.datasource.password=yourpassword
-
 spring.jpa.hibernate.ddl-auto=update
 spring.jpa.show-sql=true
 ```

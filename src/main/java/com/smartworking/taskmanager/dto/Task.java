@@ -12,6 +12,6 @@ public class Task {
     private int id;
     private String title;
     private String description;
-    private  boolean isCompleted;
+    private boolean isCompleted;
     private LocalDateTime dueDate;
 }

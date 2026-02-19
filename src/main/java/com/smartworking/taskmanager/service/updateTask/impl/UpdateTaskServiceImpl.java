@@ -12,6 +12,7 @@ public class UpdateTaskServiceImpl implements UpdateTaskService {
 
     @Autowired
     private TaskRepository taskRepository;
+
     @Override
     public Task updateTaskById(Task request) {
         TaskEntity task = taskRepository.findById(request.getId()).orElseThrow();

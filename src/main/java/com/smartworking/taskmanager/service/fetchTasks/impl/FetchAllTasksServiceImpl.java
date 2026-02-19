@@ -18,7 +18,7 @@ public class FetchAllTasksServiceImpl implements FetchAllTasksService {
 
     @Override
     public TaskListResponseDto allTaskDetails() {
-        List<TaskEntity> tasks =  taskRepository.findAll();
+        List<TaskEntity> tasks = taskRepository.findAll();
 
         List<Task> taskList = tasks.stream()
                 .map(task -> Task.builder()

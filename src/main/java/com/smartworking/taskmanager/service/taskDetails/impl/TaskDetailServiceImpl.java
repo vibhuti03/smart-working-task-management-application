@@ -21,12 +21,12 @@ public class TaskDetailServiceImpl implements TaskDetailService {
         return taskEntity.stream().
                 findFirst()
                 .map(task -> Task.builder()
-                .id(task.getId())
-                .title(task.getTitle())
-                .description(task.getDescription())
-                .isCompleted(task.isCompleted())
-                .dueDate(task.getDueDate())
-                .build())
+                        .id(task.getId())
+                        .title(task.getTitle())
+                        .description(task.getDescription())
+                        .isCompleted(task.isCompleted())
+                        .dueDate(task.getDueDate())
+                        .build())
                 .orElse(null);
     }
 }

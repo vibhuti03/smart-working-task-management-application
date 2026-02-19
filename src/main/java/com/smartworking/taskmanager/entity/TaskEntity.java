@@ -29,7 +29,7 @@ public class TaskEntity {
     private String description;
 
     @Column(name = "isCompleted")
-    private  boolean isCompleted;
+    private boolean isCompleted;
 
     @Column(name = "dueDate")
     private LocalDateTime dueDate;

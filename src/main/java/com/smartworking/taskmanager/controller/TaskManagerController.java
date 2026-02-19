@@ -29,25 +29,25 @@ public class TaskManagerController {
     private UpdateTaskStatusService updateTaskStatusService;
 
     @GetMapping("/health")
-    public ResponseEntity<String> healthCheck(@RequestParam String name){
-        return ResponseEntity.ok().body("Hello "+ name);
+    public ResponseEntity<String> healthCheck(@RequestParam String name) {
+        return ResponseEntity.ok().body("Hello " + name);
     }
 
     @GetMapping("/task")
-    public TaskListResponseDto getAllTasks(){
+    public TaskListResponseDto getAllTasks() {
         return fetchAllTasksService.allTaskDetails();
     }
 
     @PostMapping("/add-task")
     public Task addTask(
-            @Valid  @RequestBody
+            @Valid @RequestBody
             AddTaskRequestDto request
-            ){
+    ) {
         return addTasksService.addNewTask(request);
     }
 
     @PostMapping("/task-details")
-    public Task taskDetails(@RequestParam  int id){
+    public Task taskDetails(@RequestParam int id) {
         return taskDetailService.getTaskDetail(id);
     }
 
@@ -55,18 +55,18 @@ public class TaskManagerController {
     public Task updateTask(
             @Valid @RequestBody
             Task request
-    ){
+    ) {
         return updateTaskService.updateTaskById(request);
     }
 
     @DeleteMapping("/delete-task")
-    public ResponseEntity<String> deleteTask(@RequestParam  int id){
+    public ResponseEntity<String> deleteTask(@RequestParam int id) {
         return deleteTaskService.deleteTaskFromId(id);
     }
 
     @PostMapping("/update-task-status")
-    public Task updateTaskStatus(@RequestParam  int id, @RequestParam boolean newStatus){
-        return updateTaskStatusService.updateTaskCompletedStatus(id,newStatus);
+    public Task updateTaskStatus(@RequestParam int id, @RequestParam boolean newStatus) {
+        return updateTaskStatusService.updateTaskCompletedStatus(id, newStatus);
     }
 
 
